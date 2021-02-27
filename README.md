@@ -12,7 +12,7 @@ pip3 install -r requirements.txt
 domain: "https://www.googleapis.com/youtube/v3"
 api_key: ""  # Ваш ключ для доступа к YouTube API
 ```
-Гайд, (как получить ключ)[https://www.youtube.com/watch?v=th5_9woFJmk&t=1090s&ab_channel=CoreySchafer]
+Гайд, [как получить ключ](https://www.youtube.com/watch?v=th5_9woFJmk&t=1090s&ab_channel=CoreySchafer)
 
 Запускаем скрипт:
 ```bash
@@ -32,7 +32,6 @@ python YouTube-Scraper/main.py
 Данные о канале 'Лучшее с Папичем' собраны за 23 секунды
 ```
 
-По окончанию работы скрипта, появится папка Data. 
-В папке Data будут лежать папки с названиями каналов.
-В каждой из них находятся json и Excel файлы с собранной информацией<br>
-![Image alt](https://github.com/YarikMix/YouTube-Scraper/raw/main/images/1.png)
+По окончанию работы скрипта, в папка Data будет лежать папка с собранной информацией
+<br>
+![](https://github.com/YarikMix/YouTube-Scraper/raw/main/images/1.png)
