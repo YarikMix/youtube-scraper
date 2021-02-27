@@ -12,15 +12,18 @@ from tqdm import tqdm
 from functions import *
 
 
-with open("config.yaml") as ymlFile:
+BASE_DIR = Path(__file__).resolve().parent
+CONFIG_PATH = BASE_DIR.joinpath("config.yaml")
+DATA_DIR = BASE_DIR.joinpath("Data")
+
+with open(CONFIG_PATH) as ymlFile:
     config = yaml.load(ymlFile.read(), Loader=yaml.Loader)
+
 
 class YTParser:
     def __init__(self, api_key, channel_title):
         self.api_key = api_key
         self.domain = "https://www.googleapis.com/youtube/v3"
-        self.BASE_DIR = Path(__file__).resolve().parent
-        self.DATA_DIR = self.BASE_DIR.joinpath("Data")
         self.channel_title = channel_title
         self.channel_id = None
         self.channel_statistics = None
@@ -185,8 +188,8 @@ class YTParser:
 
     def main(self):
         # Создаём папку Data, если её нет
-        if not self.DATA_DIR.exists():
-            self.DATA_DIR.mkdir()
+        if not DATA_DIR.exists():
+            DATA_DIR.mkdir()
 
         # Получаем id и название канала
         channel_info = self._get_channel_info(title=self.channel_title)
@@ -196,7 +199,7 @@ class YTParser:
 
             self.channel_id, self.channel_title = channel_info
 
-            self.CHANNEL_DATA_DIR = self.DATA_DIR.joinpath(self.channel_title)
+            self.CHANNEL_DATA_DIR = DATA_DIR.joinpath(self.channel_title)
             # Создаём папку с данными о канале, если её нет
             if not self.CHANNEL_DATA_DIR.exists():
                 self.CHANNEL_DATA_DIR.mkdir()
