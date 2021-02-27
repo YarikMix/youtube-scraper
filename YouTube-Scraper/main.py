@@ -98,12 +98,12 @@ class YTParser:
                 "Длительность": get_video_duration(raw_data["contentDetails"]["duration"]),
                 "Опубликовано": get_video_release_date(raw_data["snippet"]["publishedAt"]),
                 "Статистика": {
-                    "Количество просмотров": raw_data["statistics"]["viewCount"],
-                    "Количество лайков": raw_data["statistics"]["likeCount"],
-                    "Количество дизлайков": raw_data["statistics"]["dislikeCount"],
-                    "Количество комментариев": raw_data["statistics"]["commentCount"]
+                    "Количество просмотров": raw_data["statistics"].get("viewCount", None),
+                    "Количество лайков": raw_data["statistics"].get("likeCount", None),
+                    "Количество дизлайков": raw_data["statistics"].get("dislikeCount", None),
+                    "Количество комментариев": raw_data["statistics"].get("commentCount", None)
                 },
-                "Описание": raw_data["snippet"]["description"],
+                "Описание": raw_data["snippet"].get("description", None),
                 "Превью": get_last_value(raw_data["snippet"]["thumbnails"])["url"]
             }
         )
