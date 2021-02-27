@@ -34,5 +34,5 @@ python YouTube-Scraper/main.py
 
 По окончанию работы скрипта, появится папка Data. 
 В папке Data будут лежать папки с названиями каналов.
-В каждой из них находятся json и Excel файлы с собранной информацией
-![Image alt](https://github.com/{YarikMix}/{YouTube-Scaper}/raw/{main}/{img}/1.png)
+В каждой из них находятся json и Excel файлы с собранной информацией<br>
+![Image alt](https://github.com/YarikMix/YouTube-Scaper/raw/main/img/1.png)
